@@ -1,0 +1,54 @@
+ecom 
+
+Signup 
+
+Login 
+
+
+user : admin , customer
+
+Login : email,password
+		correct --> role
+	admin
+		AdminDashboard 
+	customer
+		Home
+
+Product management 
+Cart Management 
+   
+-------------------------------------------
+user 
+	userId
+	email
+	password
+	firstName
+	role
+	contactnum
+	otp
+	gender
+
+product 
+	productId
+	name 
+	price 
+	qty
+	category
+------------------------------------------------------------
+bean  
+dao : ArrayList 	
+
+
+functionality :-	
+	signup
+	login
+	
+
+
+
+
+
+
+
+
+

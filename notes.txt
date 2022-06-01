@@ -43,6 +43,12 @@ functionality :-
 	signup
 	login
 	
+	
+after login 
+admin can add product 
+admin can view all product ===list 
+
+	
 
 
 

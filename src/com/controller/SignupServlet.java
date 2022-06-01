@@ -1,6 +1,9 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +23,11 @@ public class SignupServlet extends HttpServlet {
 		String gender = request.getParameter("gender");
 
 		// validation
+
+		Pattern p = Pattern.compile("^[a-zA-Z]\\w{2,15}$");
+		Matcher m = p.matcher(firstName);
+
+		System.out.println(m.matches());// firstname is correct - true
 
 		UserBean user = new UserBean();
 		user.setFirstName(firstName);

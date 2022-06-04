@@ -23,9 +23,17 @@ public class UserDao {
 		user1.setEmail("ram@ecom.com");
 		user1.setPassword("ram123");
 
+
+		UserBean user2 = new UserBean();
+		user2.setFirstName("Sita");
+		user2.setRole("customer");
+		user2.setGender("female");
+		user2.setEmail("sita@ecom.com");
+		user2.setPassword("sita123");
+
 		users.add(user);
 		users.add(user1);
-
+		users.add(user2);
 	}
 
 	public void addUser(UserBean user) {

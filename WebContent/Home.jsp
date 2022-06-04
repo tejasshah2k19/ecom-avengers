@@ -45,7 +45,7 @@
 							<%=p.getPrice()%><br> Category :
 							<%=p.getCategory()%>
 						</p>
-						<a href="#" class="btn btn-primary">AddToCart</a>
+						<a href="AddToCartServlet?productId=<%=p.getProductId()%>&userId=${cookie.userId.value}" class="btn btn-primary">AddToCart</a>
 					</div>
 				</div>
 			</div>

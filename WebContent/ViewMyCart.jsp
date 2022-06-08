@@ -29,27 +29,31 @@
 				userId = Integer.parseInt(c[i].getValue());
 			}
 		}
-		System.out.println("currentUSer => " +userId);
-		System.out.println("size => " +CartDao.carts.size());
-		
+		System.out.println("currentUSer => " + userId);
+		System.out.println("size => " + CartDao.carts.size());
 	%>
 	<div class="container">
 		<br> <br> <br>
 		<%
+			int total = 0;
 			for (int i = 0; i < CartDao.carts.size(); i++) {
-				System.out.println("userID = > "+ CartDao.carts.get(i).getUserId());
-				
+				System.out.println("userID = > " + CartDao.carts.get(i).getUserId());
+
 				if (CartDao.carts.get(i).getUserId() != userId) {
 					continue;
 				}
 		%>
 
-		<%=CartDao.carts.get(i).getProductId()%><br>
-
+		<%=ProductDao.getProductDetailByProductId(CartDao.carts.get(i).getProductId()).getName()%>
+		:
+		<%=ProductDao.getProductDetailByProductId(CartDao.carts.get(i).getProductId()).getPrice()%><br>
 		<%
-			 
+			total = total + ProductDao.getProductDetailByProductId(CartDao.carts.get(i).getProductId()).getPrice();
 			}
 		%>
+		<br><br>
+		Total = <%=total %><br>
+		<a href="CheckoutServlet?userId=${cookie.userId.value}">CheckOut</a>
 	</div>
 </body>
 </html>

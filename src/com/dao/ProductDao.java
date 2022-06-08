@@ -38,4 +38,16 @@ public class ProductDao {
 		products.add(p3);
 		products.add(p4);
 	}
+
+	public static ProductBean getProductDetailByProductId(int productId) {
+
+		for (ProductBean p : products) {
+			if (p.getProductId() == productId) {
+				return p;
+			}
+		}
+
+		return null;
+	}
+
 }
